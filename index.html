@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donde la creatividad se convierte en estilo - CESINEFS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cesine-pink: #E6007E;
+            --cesine-pink-hover: #c2006a;
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff;
+            overflow-x: hidden;
+            font-size: 0.95rem; /* Tipografía ligeramente más pequeña en general */
+        }
+        .text-cesine { color: var(--cesine-pink); }
+        .bg-cesine { background-color: var(--cesine-pink); }
+        .border-cesine { border-color: var(--cesine-pink); }
+        
+        /* Menú Hamburguesa Animación - Despliegue desde la DERECHA */
+        #mobile-menu {
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+            right: 0;
+            left: auto;
+            width: 100%;
+        }
+        @media (min-width: 640px) {
+            #mobile-menu {
+                width: 400px;
+                border-left: 1px solid #f1f5f9;
+            }
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Resaltado de apartados en el menú */
+        .nav-item {
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-item:hover {
+            color: var(--cesine-pink);
+            transform: translateX(10px);
+            background-color: #fff5f9;
+            padding-left: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .img-placeholder {
+            background: linear-gradient(45deg, #f1f5f9 25%, #f8fafc 25%, #f8fafc 50%, #f1f5f9 50%, #f1f5f9 75%, #f8fafc 75%, #f8fafc 100%);
+            background-size: 20px 20px;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .nav-active {
+            color: var(--cesine-pink) !important;
+            padding-left: 1rem;
+            border-left: 4px solid var(--cesine-pink);
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Navegación Superior -->
+    <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-black text-xl tracking-tighter">
+                CESINE<span class="text-cesine">FS</span>
+            </div>
+            
+            <button id="menu-toggle" class="p-2 text-slate-800 focus:outline-none z-50 relative">
+                <div id="hamburger-icon" class="space-y-1.5">
+                    <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-slate-900 transition-all duration-300"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menú Lateral Derecho -->
+    <div id="mobile-menu" class="fixed inset-y-0 bg-white z-40 flex flex-col pt-32 px-6 space-y-4 text-2xl font-extrabold shadow-2xl">
+        <a href="#inicio" class="nav-item">Inicio</a>
+        <a href="#que-es" class="nav-item text-slate-400">¿Qué es el Fashion Show?</a>
+        <a href="#antiguas" class="nav-item text-slate-400">Antiguas Colecciones</a>
+        <a href="#nuevas" class="nav-item text-slate-400">Nuevas Colecciones</a>
+        <a href="#entrevistas" class="nav-item text-slate-400">Entrevistas</a>
+    </div>
+
+    <!-- Sección 1: Inicio -->
+    <header id="inicio" class="pt-40 pb-20 px-6 max-w-7xl mx-auto min-h-[80vh] flex flex-col justify-center">
+        <div class="inline-block px-3 py-1 bg-rose-50 text-cesine text-[0.7rem] font-black uppercase tracking-[0.2em] mb-6 rounded-full w-fit">Santander / Moda</div>
+        <h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tighter mb-8">
+            El talento <br> se viste de <span class="text-cesine">rosa.</span>
+        </h1>
+        <p class="text-slate-500 text-base mb-10 leading-relaxed max-w-lg">
+            Plataforma oficial de CESINEFS. El escaparate interactivo de la Escuela de Diseño de CESINE en Cantabria.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#nuevas" class="bg-cesine text-white text-center py-3 px-8 rounded-full font-bold shadow-xl shadow-rose-200 transition-transform active:scale-95 text-sm">Ver Nuevas Colecciones</a>
+            <a href="#que-es" class="border-2 border-slate-100 text-center py-3 px-8 rounded-full font-bold hover:bg-slate-50 transition-colors text-sm">Conoce el Evento</a>
+        </div>
+    </header>
+
+    <!-- Sección 2: ¿Qué es el Fashion Show? -->
+    <section id="que-es" class="py-24 bg-slate-50 px-6 border-y border-slate-100">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-extrabold mb-8 flex items-center">
+                <span class="w-12 h-1 bg-cesine mr-4"></span>
+                ¿Qué es el Fashion Show?
+            </h2>
+            <div class="space-y-6 text-slate-600 leading-relaxed text-sm">
+                <p>
+                    El <span class="font-bold text-slate-900">CESINEFS</span> es mucho más que un desfile de fin de curso. Es la puesta de largo profesional de los alumnos del Grado en Diseño de Moda de la Universidad CESINE.
+                </p>
+                <p>
+                    Celebrado anualmente en enclaves emblemáticos de Santander, el evento reúne a críticos, prensa especializada y líderes de la industria textil para evaluar el rigor técnico, la coherencia conceptual y la capacidad de innovación de nuestros nuevos talentos.
+                </p>
+            </div>
+            
+            <div class="mt-12 p-8 bg-white rounded-3xl border border-slate-200 shadow-sm">
+                <div class="grid grid-cols-2 gap-8 text-center">
+                    <div>
+                        <p class="text-3xl font-black text-cesine">15+</p>
+                        <p class="text-[0.65rem] uppercase font-bold text-slate-400 mt-2">Años de Historia</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black text-cesine">200+</p>
+                        <p class="text-[0.65rem] uppercase font-bold text-slate-400 mt-2">Looks Anuales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Antiguas Colecciones -->
+    <section id="antiguas" class="py-24 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-extrabold mb-4">Antiguas Colecciones</h2>
+            <p class="text-slate-500 mb-12 text-sm">Explora la evolución de nuestra identidad visual a través de ediciones pasadas.</p>
+            
+            <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-10">
+                <div class="flex-none w-[260px] group">
+                    <div class="h-[360px] w-full rounded-3xl img-placeholder border border-slate-100 mb-4 transition-transform group-hover:scale-[0.98]"></div>
+                    <h3 class="font-black text-lg">Metamorfosis</h3>
+                    <p class="text-cesine text-xs font-bold">Edición 2025</p>
+                </div>
+                <div class="flex-none w-[260px] group">
+                    <div class="h-[360px] w-full rounded-3xl img-placeholder border border-slate-100 mb-4 transition-transform group-hover:scale-[0.98]"></div>
+                    <h3 class="font-black text-lg">Sinergia</h3>
+                    <p class="text-cesine text-xs font-bold">Edición 2024</p>
+                </div>
+                <div class="flex-none w-[260px] group">
+                    <div class="h-[360px] w-full rounded-3xl img-placeholder border border-slate-100 mb-4 transition-transform group-hover:scale-[0.98]"></div>
+                    <h3 class="font-black text-lg">Atemporal</h3>
+                    <p class="text-cesine text-xs font-bold">Edición 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Nuevas Colecciones -->
+    <section id="nuevas" class="py-24 bg-stone-900 text-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl font-black mb-4">Nuevas Colecciones</h2>
+                <p class="text-stone-400 text-sm">Presentamos a los diseñadores de la promoción 2026. Próximamente visuales completos.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" id="grid-colecciones">
+                <div class="group">
+                    <div class="aspect-[3/4] bg-stone-800 rounded-3xl border border-stone-700 mb-6 flex items-center justify-center text-stone-600 transition-colors group-hover:border-cesine overflow-hidden relative">
+                        <span class="text-[0.65rem] uppercase font-bold tracking-widest">[ Espacio para Imagen ]</span>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-lg font-bold mb-1">Nombre Diseñador 1</h4>
+                            <p class="text-stone-500 text-xs">Concepto: "Nombre Colección"</p>
+                        </div>
+                        <span class="text-cesine text-xl">+</span>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="aspect-[3/4] bg-stone-800 rounded-3xl border border-stone-700 mb-6 flex items-center justify-center text-stone-600 transition-colors group-hover:border-cesine overflow-hidden">
+                        <span class="text-[0.65rem] uppercase font-bold tracking-widest">[ Espacio para Imagen ]</span>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-lg font-bold mb-1">Nombre Diseñador 2</h4>
+                            <p class="text-stone-500 text-xs">Concepto: "Nombre Colección"</p>
+                        </div>
+                        <span class="text-cesine text-xl">+</span>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="aspect-[3/4] bg-stone-800 rounded-3xl border border-stone-700 mb-6 flex items-center justify-center text-stone-600 transition-colors group-hover:border-cesine overflow-hidden">
+                        <span class="text-[0.65rem] uppercase font-bold tracking-widest">[ Espacio para Imagen ]</span>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-lg font-bold mb-1">Nombre Diseñador 3</h4>
+                            <p class="text-stone-500 text-xs">Concepto: "Nombre Colección"</p>
+                        </div>
+                        <span class="text-cesine text-xl">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Entrevistas -->
+    <section id="entrevistas" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-extrabold mb-10">Entrevistas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-6 bg-white border border-slate-100 rounded-3xl flex items-center space-x-6 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-cesine rounded-2xl flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
+                        <span class="text-lg">&#9658;</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-base">Inspiración y Sostenibilidad</h4>
+                        <p class="text-xs text-slate-400">Charla con los nuevos talentos</p>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white border border-slate-100 rounded-3xl flex items-center space-x-6 hover:shadow-xl hover:shadow-slate-100 transition-all cursor-pointer group">
+                    <div class="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
+                        <span class="text-lg">&#9658;</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-base">Futuro de la Moda en Cantabria</h4>
+                        <p class="text-xs text-slate-400">Mesa redonda con el profesorado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Institucional -->
+    <footer class="bg-slate-100 pt-20 pb-10 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="space-y-4">
+                    <div class="font-black text-xl tracking-tighter">
+                        CESINE<span class="text-cesine">FS</span>
+                    </div>
+                    <p class="text-xs text-slate-500 max-w-xs leading-relaxed">
+                        Centro Universitario líder en diseño y comunicación. Impulsando el talento creativo desde 1993.
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <h5 class="font-bold text-[0.6rem] uppercase tracking-widest text-slate-400">Contacto</h5>
+                    <ul class="text-xs text-slate-600 space-y-2">
+                        <li><a href="mailto:info@cesine.com" class="hover:text-cesine transition-colors">info@cesine.com</a></li>
+                        <li><a href="tel:+34942281858" class="hover:text-cesine transition-colors">+34 942 281 858</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h5 class="font-bold text-[0.6rem] uppercase tracking-widest text-slate-400">Ubicación</h5>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        C/ Floranes, 40 <br>
+                        39010 Santander <br>
+                        Cantabria, España
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-[0.6rem] text-slate-400 font-bold uppercase tracking-widest">
+                <p>&copy; 2026 CESINE Centro Universitario. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-cesine">Instagram</a>
+                    <a href="#" class="hover:text-cesine">LinkedIn</a>
+                    <a href="#" class="hover:text-cesine">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica de Menú Hamburguesa
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('#hamburger-icon span');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            
+            // Animación Icono
+            if (isOpen) {
+                hamburgerLines[0].style.transform = "translateY(8px) rotate(45deg)";
+                hamburgerLines[1].style.opacity = "0";
+                hamburgerLines[2].style.transform = "translateY(-8px) rotate(-45deg)";
+                document.body.style.overflow = "hidden";
+            } else {
+                hamburgerLines[0].style.transform = "none";
+                hamburgerLines[1].style.opacity = "1";
+                hamburgerLines[2].style.transform = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburgerLines.forEach(l => l.style.transform = "none");
+                hamburgerLines[1].style.opacity = "1";
+                document.body.style.overflow = "auto";
+            });
+        });
+
+        // Scroll Spy para Navegación Activa
+        const sections = document.querySelectorAll("section, header");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove("nav-active");
+                if (item.getAttribute("href").includes(current)) {
+                    item.classList.add("nav-active");
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
