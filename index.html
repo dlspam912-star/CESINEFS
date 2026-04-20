@@ -17,13 +17,12 @@
             font-family: 'Inter', sans-serif; 
             background-color: #ffffff;
             overflow-x: hidden;
-            font-size: 0.95rem; /* Tipografía ligeramente más pequeña en general */
+            font-size: 0.95rem;
         }
         .text-cesine { color: var(--cesine-pink); }
         .bg-cesine { background-color: var(--cesine-pink); }
         .border-cesine { border-color: var(--cesine-pink); }
         
-        /* Menú Hamburguesa Animación - Despliegue desde la DERECHA */
         #mobile-menu {
             transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(100%);
@@ -41,7 +40,6 @@
             transform: translateX(0);
         }
 
-        /* Resaltado de apartados en el menú */
         .nav-item {
             padding: 0.5rem 0;
             transition: all 0.3s ease;
@@ -72,7 +70,6 @@
 </head>
 <body class="text-slate-900">
 
-    <!-- Navegación Superior -->
     <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="font-black text-xl tracking-tighter">
@@ -89,16 +86,15 @@
         </div>
     </nav>
 
-    <!-- Menú Lateral Derecho -->
     <div id="mobile-menu" class="fixed inset-y-0 bg-white z-40 flex flex-col pt-32 px-6 space-y-4 text-2xl font-extrabold shadow-2xl">
         <a href="#inicio" class="nav-item">Inicio</a>
         <a href="#que-es" class="nav-item text-slate-400">¿Qué es el Fashion Show?</a>
+        <a href="#pasado-2025" class="nav-item text-slate-400">Fashion Show 2025</a>
         <a href="#antiguas" class="nav-item text-slate-400">Antiguas Colecciones</a>
         <a href="#nuevas" class="nav-item text-slate-400">Nuevas Colecciones</a>
         <a href="#entrevistas" class="nav-item text-slate-400">Entrevistas</a>
     </div>
 
-    <!-- Sección 1: Inicio -->
     <header id="inicio" class="pt-40 pb-20 px-6 max-w-7xl mx-auto min-h-[80vh] flex flex-col justify-center">
         <div class="inline-block px-3 py-1 bg-rose-50 text-cesine text-[0.7rem] font-black uppercase tracking-[0.2em] mb-6 rounded-full w-fit">Santander / Moda</div>
         <h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tighter mb-8">
@@ -113,7 +109,6 @@
         </div>
     </header>
 
-    <!-- Sección 2: ¿Qué es el Fashion Show? -->
     <section id="que-es" class="py-24 bg-slate-50 px-6 border-y border-slate-100">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-2xl font-extrabold mb-8 flex items-center">
@@ -144,33 +139,76 @@
         </div>
     </section>
 
-    <!-- Sección 3: Antiguas Colecciones -->
+    <section id="pasado-2025" class="py-24 px-6 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2">
+                <div class="aspect-square rounded-3xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner group">
+                    <!-- GitHub cargará show.jpg aquí. Se ha añadido un efecto de opacidad suave al cargar -->
+                    <img src="show.jpg" alt="[Imagen del Fashion Show 2025]" class="w-full h-full object-cover transition-opacity duration-700 opacity-0" onload="this.classList.remove('opacity-0')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="hidden w-full h-full flex-col items-center justify-center text-slate-400 text-xs uppercase font-bold tracking-widest img-placeholder">
+                        <span class="mb-2">Subir archivo: show.jpg</span>
+                        <span class="opacity-50">[ Fotografía Evento 2025 ]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <div class="text-cesine font-black text-xs uppercase tracking-widest">Edición Anterior</div>
+                <h2 class="text-3xl font-black leading-tight tracking-tighter">Fashion Show 2025: <br> Metamorfosis</h2>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    La edición 2025 marcó un hito en la trayectoria de CESINEFS bajo el lema "Metamorfosis". Celebrado en el Palacio de la Magdalena, el evento exploró la transformación de materiales industriales en alta costura.
+                </p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Más de 30 diseñadores noveles presentaron colecciones que fusionaron la artesanía tradicional cántabra con tecnologías de impresión 3D, recibiendo elogios de la crítica por su compromiso con la sostenibilidad y la vanguardia estética.
+                </p>
+                <div class="pt-4 flex gap-6">
+                    <div>
+                        <div class="text-lg font-bold">450</div>
+                        <div class="text-[0.6rem] uppercase text-slate-400 font-black">Asistentes</div>
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold">32</div>
+                        <div class="text-[0.6rem] uppercase text-slate-400 font-black">Colecciones</div>
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold">120</div>
+                        <div class="text-[0.6rem] uppercase text-slate-400 font-black">Modelos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="antiguas" class="py-24 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-2xl font-extrabold mb-4">Antiguas Colecciones</h2>
             <p class="text-slate-500 mb-12 text-sm">Explora la evolución de nuestra identidad visual a través de ediciones pasadas.</p>
             
             <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-10">
-                <div class="flex-none w-[260px] group">
-                    <div class="h-[360px] w-full rounded-3xl img-placeholder border border-slate-100 mb-4 transition-transform group-hover:scale-[0.98]"></div>
-                    <h3 class="font-black text-lg">Metamorfosis</h3>
-                    <p class="text-cesine text-xs font-bold">Edición 2025</p>
+                <div class="flex-none w-[320px] p-8 bg-slate-50 rounded-3xl border border-slate-200 hover:border-cesine transition-colors">
+                    <p class="text-cesine text-[0.65rem] font-black uppercase tracking-widest mb-2">Edición 2025</p>
+                    <h3 class="font-black text-xl mb-4 tracking-tighter">Metamorfosis</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Una exploración profunda sobre el cambio y la evolución orgánica. Se destacó por el uso de tejidos experimentales que reaccionaban a la luz y estructuras arquitectónicas aplicadas al cuerpo humano.
+                    </p>
                 </div>
-                <div class="flex-none w-[260px] group">
-                    <div class="h-[360px] w-full rounded-3xl img-placeholder border border-slate-100 mb-4 transition-transform group-hover:scale-[0.98]"></div>
-                    <h3 class="font-black text-lg">Sinergia</h3>
-                    <p class="text-cesine text-xs font-bold">Edición 2024</p>
+                <div class="flex-none w-[320px] p-8 bg-slate-50 rounded-3xl border border-slate-200 hover:border-cesine transition-colors">
+                    <p class="text-cesine text-[0.65rem] font-black uppercase tracking-widest mb-2">Edición 2024</p>
+                    <h3 class="font-black text-xl mb-4 tracking-tighter">Sinergia</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Centrada en la unión de la tecnología y la artesanía manual. El desfile mostró piezas creadas con corte láser combinadas con bordados tradicionales de Cantabria, buscando un equilibrio entre pasado y futuro.
+                    </p>
                 </div>
-                <div class="flex-none w-[260px] group">
-                    <div class="h-[360px] w-full rounded-3xl img-placeholder border border-slate-100 mb-4 transition-transform group-hover:scale-[0.98]"></div>
-                    <h3 class="font-black text-lg">Atemporal</h3>
-                    <p class="text-cesine text-xs font-bold">Edición 2023</p>
+                <div class="flex-none w-[320px] p-8 bg-slate-50 rounded-3xl border border-slate-200 hover:border-cesine transition-colors">
+                    <p class="text-cesine text-[0.65rem] font-black uppercase tracking-widest mb-2">Edición 2023</p>
+                    <h3 class="font-black text-xl mb-4 tracking-tighter">Atemporal</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Una reflexión sobre la durabilidad de la moda frente a la cultura del "fast-fashion". Colecciones sobrias, con cortes perfectos y materiales de alta calidad diseñados para perdurar décadas.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección 4: Nuevas Colecciones -->
     <section id="nuevas" class="py-24 bg-stone-900 text-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
@@ -221,7 +259,6 @@
         </div>
     </section>
 
-    <!-- Sección 5: Entrevistas -->
     <section id="entrevistas" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-2xl font-extrabold mb-10">Entrevistas</h2>
@@ -250,7 +287,6 @@
         </div>
     </section>
 
-    <!-- Footer Institucional -->
     <footer class="bg-slate-100 pt-20 pb-10 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
@@ -293,7 +329,6 @@
     </footer>
 
     <script>
-        // Lógica de Menú Hamburguesa
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const hamburgerLines = document.querySelectorAll('#hamburger-icon span');
@@ -301,8 +336,6 @@
 
         menuToggle.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.toggle('open');
-            
-            // Animación Icono
             if (isOpen) {
                 hamburgerLines[0].style.transform = "translateY(8px) rotate(45deg)";
                 hamburgerLines[1].style.opacity = "0";
@@ -325,7 +358,6 @@
             });
         });
 
-        // Scroll Spy para Navegación Activa
         const sections = document.querySelectorAll("section, header");
         window.addEventListener("scroll", () => {
             let current = "";
@@ -343,7 +375,6 @@
                 }
             });
         });
-
     </script>
 </body>
 </html>
