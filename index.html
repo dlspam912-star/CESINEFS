@@ -98,6 +98,15 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px -10px rgba(230, 0, 126, 0.1);
         }
+
+        /* Estilos para reproductores de audio personalizados */
+        audio::-webkit-media-controls-panel {
+            background-color: #f8fafc;
+        }
+        audio::-webkit-media-controls-play-button {
+            background-color: var(--cesine-pink);
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="text-slate-900">
@@ -122,6 +131,7 @@
         <a href="#que-es" class="nav-item">¿Qué es el Fashion Show?</a>
         <a href="#nuevas" class="nav-item">Nuevas Colecciones</a>
         <a href="#anteriores" class="nav-item">Anteriores Colecciones</a>
+        <a href="#entrevistas-vivo" class="nav-item">Entrevistas en vivo</a>
     </div>
 
     <header id="inicio" class="pt-40 pb-20 px-6 max-w-7xl mx-auto min-h-[80vh] flex flex-col justify-center">
@@ -265,6 +275,70 @@
                         Más de una década llevando la moda a lugares icónicos como el Palacio de la Magdalena. Una plataforma que ha servido de lanzadera para diseñadores que hoy desfilan en pasarelas de todo el país.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección: Entrevistas en vivo -->
+    <section id="entrevistas-vivo" class="py-24 bg-slate-50 px-6 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-black mb-12 text-slate-900">Entrevistas en vivo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Audio Lucía -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-cesine/10 rounded-2xl flex items-center justify-center mr-4">
+                            <span class="text-cesine font-bold">LM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Lucía Merino</h4>
+                            <p class="text-[0.65rem] text-slate-400 uppercase font-black tracking-widest">Entrevista Completa</p>
+                        </div>
+                    </div>
+                    <audio controls class="w-full">
+                        <source src="entrevista-lucia.m4a" type="audio/x-m4a">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                    <p class="mt-4 text-xs text-slate-500 italic">"Severa: Un estudio sobre el traje clásico masculino reinterpretado."</p>
+                </div>
+
+                <!-- Audio Valeria -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-cesine/10 rounded-2xl flex items-center justify-center mr-4">
+                            <span class="text-cesine font-bold">VA</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Valeria Argüelles</h4>
+                            <p class="text-[0.65rem] text-slate-400 uppercase font-black tracking-widest">Entrevista Completa</p>
+                        </div>
+                    </div>
+                    <audio controls class="w-full">
+                        <source src="entrevista-valeria.m4a" type="audio/x-m4a">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                    <p class="mt-4 text-xs text-slate-500 italic">"Ziggy: La moda como herramienta para expresar personalidades."</p>
+                </div>
+
+                <!-- Audio Celia -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-cesine/10 rounded-2xl flex items-center justify-center mr-4">
+                            <span class="text-cesine font-bold">CA</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Celia Aldama</h4>
+                            <p class="text-[0.65rem] text-slate-400 uppercase font-black tracking-widest">Entrevista Completa</p>
+                        </div>
+                    </div>
+                    <audio controls class="w-full">
+                        <source src="entrevista-celia.m4a" type="audio/x-m4a">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                    <p class="mt-4 text-xs text-slate-500 italic">"02: Estética nostálgica y cultura pop de los años 2000."</p>
+                </div>
+
             </div>
         </div>
     </section>
